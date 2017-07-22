@@ -2,15 +2,28 @@
 @{
     ViewBag.Title = "Index";
 }
-
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
 <body>
     <div ng-app="myApp" ng-controller="customersCtrl">
 
         <table>
+            <tr>
+                <td> Nombre </td>
+                <td> Apellido </td>
+                <td> Domicilio </td>
+                <td> Edad </td>
+                <td> Ciudad </td>
+                <td> Estado </td>
+                <td> Id Departamento </td>
+            </tr>
             <tr ng-repeat="x in empleados">
                 <td>{{ x.nombre }}</td>
-                <td>{{ x.telefono }}</td>
-                <td>{{ x.direccion }}</td>
+                <td>{{ x.apellido }}</td>
+                <td>{{ x.domicilio }}</td>
+                <td>{{ x.edad }}</td>
+                <td>{{ x.ciudad }}</td>
+                <td>{{ x.estado }}</td>
+                <td>{{ x.id_departamento }}</td>                
             </tr>
         </table>
 
