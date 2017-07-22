@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using proyectoFinal.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -15,13 +17,10 @@ namespace proyectoFinal.Controllers
         }
         public JsonResult getInformation()
         {
-            /* ws.WebService1 webService = new ws.WebService1();
-             return Json(webService.getEmpleados(), JsonRequestBehavior.AllowGet);*/
-
-            var departamentos = new List<object>();
-            departamentos.Add(new { nombreDep = "Sistemas", ciudad = "Querétaro" });
-            departamentos.Add(new { nombreDep = "Ventas", ciudad = "Monterrey" });
-            return Json(departamentos, JsonRequestBehavior.AllowGet);
+            ws.WebService1 webService = new ws.WebService1();
+            var datos = webService.getDepartamentos();
+            var items = JsonConvert.DeserializeObject<List<Departamento>>(datos);
+            return Json(items, JsonRequestBehavior.AllowGet);
         }
     }
 }
