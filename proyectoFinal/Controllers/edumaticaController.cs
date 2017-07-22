@@ -24,5 +24,18 @@ namespace proyectoFinal.Controllers
             var items = JsonConvert.DeserializeObject<List<Empleado>>(datos);
             return Json(items, JsonRequestBehavior.AllowGet);
         }
+        public ActionResult ExportPDFempleados()
+        {
+            return View();
+        }
+
+        public ActionResult pdf()
+        {
+            return new Rotativa.MVC.ActionAsPdf("ExportPDFempleados")
+            {
+                FileName = "Informacion.pdF"
+            };
+
+        }
     }
 }

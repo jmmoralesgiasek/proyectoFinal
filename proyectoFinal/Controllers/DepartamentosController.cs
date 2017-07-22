@@ -22,5 +22,19 @@ namespace proyectoFinal.Controllers
             var items = JsonConvert.DeserializeObject<List<Departamento>>(datos);
             return Json(items, JsonRequestBehavior.AllowGet);
         }
+
+        public ActionResult ExportPDF()
+        {
+            return View();
+        }
+
+        public ActionResult pdf()
+        {
+            return new Rotativa.MVC.ActionAsPdf("ExportPDF")
+            {
+                FileName = "Informacion.pdF"
+            };
+
+        }
     }
 }

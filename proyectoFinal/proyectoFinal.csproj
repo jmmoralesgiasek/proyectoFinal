@@ -328,6 +328,8 @@
       <LastGenOutput>Reference.cs</LastGenOutput>
     </Content>
     <Content Include="Views\Departamentos\Index.cshtml" />
+    <Content Include="Views\Departamentos\ExportPDF.cshtml" />
+    <Content Include="Views\edumatica\ExportPDFempleados.cshtml" />
     <None Include="Web References\ws\WebService1.disco" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
