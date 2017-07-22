@@ -80,6 +80,8 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -204,10 +206,38 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\Departamento.cs" />
-    <Compile Include="Models\Empleado.cs" />
+    <Compile Include="Models\Departamento.cs">
+      <DependentUpon>edu_final.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\edu_final.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>edu_final.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\edu_final.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>edu_final.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\edu_final.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>edu_final.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Empleado.cs">
+      <DependentUpon>edu_final.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\getEmpByCity_Result.cs">
+      <DependentUpon>edu_final.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\getEmpByName_Result.cs">
+      <DependentUpon>edu_final.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\vGrafica.cs">
+      <DependentUpon>edu_final.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -233,6 +263,16 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Models\edu_final.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>edu_final.edmx</DependentUpon>
+      <LastGenOutput>edu_final.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\edu_final.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>edu_final.edmx</DependentUpon>
+      <LastGenOutput>edu_final.cs</LastGenOutput>
+    </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
@@ -251,6 +291,13 @@
     <Content Include="fonts\fontawesome-webfont.woff" />
     <Content Include="fonts\fontawesome-webfont.ttf" />
     <Content Include="fonts\fontawesome-webfont.eot" />
+    <EntityDeploy Include="Models\edu_final.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>edu_final.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\edu_final.edmx.diagram">
+      <DependentUpon>edu_final.edmx</DependentUpon>
+    </Content>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -337,6 +384,9 @@
       <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
       <CachedSettingsPropName>proyectoFinal_ws_WebService1</CachedSettingsPropName>
     </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
