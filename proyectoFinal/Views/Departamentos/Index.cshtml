@@ -5,17 +5,22 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
 <body>
+    <br/><br/>
     <div ng-app="myApp" ng-controller="customersCtrl">
 
-        <table>
-            <tr>
-                <td> Nombre </td>
-                <td> Ciudad </td>
-            </tr>
-            <tr ng-repeat="x in departamentos">
-                <td>{{ x.nombreDep }}</td>
-                <td>{{ x.ciudad }}</td>
-            </tr>
+        <table class="table">
+            <thead>
+                <tr>
+                    <td> Nombre </td>
+                    <td> Ciudad </td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="x in departamentos">
+                    <td>{{ x.nombreDep }}</td>
+                    <td>{{ x.ciudad }}</td>
+                </tr>
+            </tbody>
         </table>
 
     </div>
@@ -24,7 +29,8 @@
             var app = angular.module('myApp', []);
             app.controller('customersCtrl', function ($scope, $http) {
                 $http.get("/departamentos/getInformation")
-                .then(function (response) { $scope.departamentos = response.data; });
+                    .then(function success(response) { $scope.departamentos = response.data; hideErrorAlert(); },
+                    function error(response) { showErrorAlert('no se obtuvieron datos'); });
             });
     </script>
 </body>
