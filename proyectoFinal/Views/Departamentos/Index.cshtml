@@ -16,6 +16,9 @@
                 </tr>
             </thead>
             <tbody>
+                <tr ng-if="departamentos.length == 0" class="text-center">
+                    <td colspan="2">No hay datos</td>
+                </tr>
                 <tr ng-repeat="x in departamentos">
                     <td>{{ x.nombreDep }}</td>
                     <td>{{ x.ciudad }}</td>
@@ -23,6 +26,10 @@
             </tbody>
         </table>
 
+    </div>
+    <br/>
+    <div>
+        <button type="button" class="btn btn-danger"><i class="fa fa-file-pdf-o"></i> pdf</button>
     </div>
 
     <script>

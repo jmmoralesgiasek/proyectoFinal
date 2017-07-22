@@ -4,5 +4,6 @@
 }
 
 function hideErrorAlert() {
+    $('#errorAletText').text('');
     $('#errorAlert').hide();
 }
