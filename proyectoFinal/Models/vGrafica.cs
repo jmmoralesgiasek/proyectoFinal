@@ -12,17 +12,10 @@ namespace proyectoFinal.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Empleado
+    public partial class vGrafica
     {
-        public int id { get; set; }
-        public string Nombre { get; set; }
-        public string Apellido { get; set; }
-        public string Domicilio { get; set; }
-        public Nullable<int> Edad { get; set; }
-        public string Ciudad { get; set; }
-        public string Estado { get; set; }
-        public int id_departamento { get; set; }
-    
-        public virtual Departamento Departamento { get; set; }
+        public int ID { get; set; }
+        public string NOM_DEP { get; set; }
+        public Nullable<int> TOTAL { get; set; }
     }
 }
